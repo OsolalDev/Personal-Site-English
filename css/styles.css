@@ -3,6 +3,7 @@
 :root {
   --text-white: #eeeeee;
   --primary-color: #00adb5;
+  --primary-color-translucid: #00adb580;
   --dark-greishi: #393e46;
   --bg-color: #222831;
 }
@@ -10,21 +11,32 @@
 body {
   font-family: "Karla", sans-serif;
   font-weight: 400;
-  background: linear-gradient(
-    to right,
-    var(--primary-color) 0%,
-    var(--primary-color) 20%,
-    var(--bg-color) 20%,
-    var(--bg-color) 100%
-  );
+  background-color: var(--bg-color);
   color: var(--text-white);
   margin: 0;
+}
+
+p {
+  font-size: 1.2rem;
 }
 
 .complete-content {
   /* border: 5px red solid; */
   width: 70%;
   margin: auto;
+}
+
+.decoration {
+  background-color: var(--primary-color);
+  height: 100vh;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.primary-color-title {
+  color: var(--primary-color);
 }
 
 /* ------------------------------------------------ HOME PAGE STYLE ------------------------------------------------ */
@@ -44,7 +56,7 @@ body {
   position: absolute;
   left: -15%;
   object-fit: cover;
-  filter: grayscale(100%);
+  filter: drop-shadow(-10px 10px 4px var(--bg-color));
 }
 
 .home-page_content {
@@ -72,6 +84,7 @@ body {
 .home-page_content_text p {
   line-height: 25px;
   margin: 0;
+  text-align: justify;
 }
 
 .home-page_content_buttons {
@@ -96,4 +109,268 @@ body {
   width: 50px;
   border: var(--primary-color) solid 3px;
   border-radius: 50%;
+}
+
+/* ------------------------------------------------ SKILLS PAGE STYLE ------------------------------------------------ */
+.skills-page {
+  background-color: var(--bg-color);
+  /* border: 5px green solid; */
+  margin: 0 10%;
+}
+
+.skills-page_title {
+  position: relative;
+  margin-bottom: 10%;
+  /* border: 5px yellow solid; */
+}
+
+.skills-page_title_bg-title {
+  margin: 0;
+  /* border: 5px yellow solid; */
+  color: var(--dark-greishi);
+  font-size: 6rem;
+  text-align: center;
+}
+
+.skills-page_title_main-title {
+  /* border: 5px yellow solid; */
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+  font-size: 3rem;
+}
+
+.skills-page_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.skills-page_grid_each-skill {
+  margin: 30px;
+  /* border: 2px red solid; */
+}
+
+.skills-page_grid_each-skill_images {
+  text-align: center;
+  position: relative;
+}
+
+.skills-page_grid_each-skill_images_icon {
+  width: 100%;
+  /* border: 2px lightblue solid; */
+}
+
+.skills-page_grid_each-skill_images_percentage {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: #00adb5 solid 5px;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary-color-translucid);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-page_grid_each-skill_images_percentage p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.skills-page_grid_each-skill_content {
+  text-align: center;
+}
+
+.skills-page_grid_each-skill_content_title {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin: 10px;
+  font-weight: 400;
+}
+
+.skills-page_grid_each-skill_content_text {
+  text-align: justify;
+}
+
+/* ------------------------------------------------ MEDIA QUERIES ------------------------------------------------ */
+
+@media (min-width: 2048px) {
+  /* SKILLS PAGE */
+  .skills-page_title_bg-title {
+    font-size: 9rem;
+  }
+
+  .skills-page_title_main-title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  /* HOME PAGE */
+  .home-page_profile-image {
+    height: 60%;
+    width: 45%;
+  }
+
+  /* SKILLS PAGE */
+  .skills-page_grid_each-skill {
+    margin: 40px;
+    /* border: 2px red solid; */
+  }
+
+  .skills-page_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* GENERAL */
+  .decoration {
+    display: none;
+  }
+
+  /* HOME PAGE */
+  .home-page {
+    /* border: 5px green solid; */
+    display: block;
+    text-align: center;
+  }
+
+  .home-page_profile-image {
+    /* border: 2px yellow solid; */
+    margin-top: 5%;
+    position: relative;
+    left: 0;
+    height: 30%;
+    width: 80%;
+    filter: drop-shadow(-5px 5px 4px var(--primary-color));
+  }
+
+  .home-page_content {
+    text-align: left;
+    margin-top: 10%;
+    /* border: 2px purple solid; */
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* SKILLS PAGE */
+  .skills-page_grid_each-skill {
+    margin: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* border: 2px red solid; */
+  }
+
+  .skills-page_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-page_grid_each-skill_images_percentage {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skills-page_grid_each-skill_images_percentage p {
+    font-size: 1.8rem;
+  }
+
+  .skills-page_grid_each-skill_content_text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 375px) {
+  /* GENERAL */
+  .complete-content {
+    width: 90%;
+  }
+
+  /* HOME PAGE */
+  .home-page {
+    /* border: 5px green solid; */
+    height: auto;
+  }
+  .home-page_content_titles {
+    font-size: 1.1rem;
+  }
+
+  /* SKILLS PAGE */
+  .skills-page {
+    margin-top: 10%;
+  }
+
+  .skills-page_grid_each-skill {
+    margin: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* border: 2px red solid; */
+  }
+
+  .skills-page_grid_each-skill_images_percentage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skills-page_grid_each-skill_images_percentage p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* GENERAL */
+  p {
+    font-size: 1.1rem;
+  }
+
+  /* HOME PAGE */
+  .home-page_content_titles {
+    font-size: 1rem;
+  }
+
+  .home-page_content_buttons_more-about-me {
+    font-size: 0.8rem;
+  }
+
+  .home-page_profile-image {
+    width: 60%;
+  }
+
+  .home-page_content_buttons_circles {
+    width: 40px;
+    border: var(--primary-color) solid 3px;
+    border-radius: 50%;
+  }
+
+  /* SKILLS PAGE */
+  .skills-page_title_bg-title {
+    font-size: 4rem;
+  }
+
+  .skills-page_title_main-title {
+    font-size: 2rem;
+  }
+
+  .skills-page_grid_each-skill {
+    margin: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* border: 2px red solid; */
+  }
+
+  .skills-page_grid_each-skill_images_percentage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skills-page_grid_each-skill_images_percentage p {
+    font-size: 1.2rem;
+  }
 }
