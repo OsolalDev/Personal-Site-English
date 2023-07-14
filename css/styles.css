@@ -39,6 +39,30 @@ p {
   color: var(--primary-color);
 }
 
+.general_title {
+  position: relative;
+  margin-bottom: 5%;
+  /* border: 5px yellow solid; */
+}
+
+.general_title_bg-title {
+  margin: 0;
+  /* border: 5px yellow solid; */
+  color: var(--dark-greishi);
+  font-size: 6rem;
+  text-align: center;
+}
+
+.general_title_main-title {
+  /* border: 5px yellow solid; */
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+  font-size: 3rem;
+}
+
 /* ------------------------------------------------ HOME PAGE STYLE ------------------------------------------------ */
 
 .home-page {
@@ -113,33 +137,8 @@ p {
 
 /* ------------------------------------------------ SKILLS PAGE STYLE ------------------------------------------------ */
 .skills-page {
-  background-color: var(--bg-color);
   /* border: 5px green solid; */
   margin: 0 10%;
-}
-
-.skills-page_title {
-  position: relative;
-  margin-bottom: 10%;
-  /* border: 5px yellow solid; */
-}
-
-.skills-page_title_bg-title {
-  margin: 0;
-  /* border: 5px yellow solid; */
-  color: var(--dark-greishi);
-  font-size: 6rem;
-  text-align: center;
-}
-
-.skills-page_title_main-title {
-  /* border: 5px yellow solid; */
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: 25%;
-  font-size: 3rem;
 }
 
 .skills-page_grid {
@@ -198,20 +197,94 @@ p {
   text-align: justify;
 }
 
+/* ------------------------------------------------ EDUCATION PAGE STYLE ------------------------------------------------ */
+.education-page {
+  min-height: 100vh;
+}
+
+.education-page_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 100px;
+  text-align: center;
+}
+
+/* .education-page_oficial-education,
+.education-page_additional-education {
+  border: 2px red solid; 
+} */
+
+.education-page_oficial-education_each-education {
+  /* border: 2px green solid; */
+  position: relative;
+  margin-top: 50px;
+}
+
+.education-page_oficial-education_each-education_decoration {
+  /* border: 2px var(--primary-color) solid; */
+  width: 10%;
+  height: 100%;
+  position: absolute;
+}
+
+.education-page_oficial-education_each-education_decoration_circle {
+  /* border: 2px coral solid; */
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.education-page_oficial-education_each-education_decoration_line {
+  height: 70%;
+  width: 5px;
+  /* border: 2px white solid; */
+  margin: auto;
+  background-color: var(--primary-color);
+  opacity: 0.3;
+}
+
+.education-page_oficial-education_each-education_content {
+  /* border: 2px yellow solid; */
+  text-align: left;
+  margin-left: 10%;
+}
+
+.education-page_oficial-education_each-education_content_date {
+  margin: 5px 0;
+  opacity: 0.7;
+}
+
+.education-page_oficial-education_each-education_content_title {
+  margin: 5px 0;
+}
+
+.education-page_oficial-education_each-education_content_title span {
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.education-page_oficial-education_each-education_content_text {
+  margin: 5px 0;
+  opacity: 0.7;
+}
+
 /* ------------------------------------------------ MEDIA QUERIES ------------------------------------------------ */
 
 @media (min-width: 2048px) {
-  /* SKILLS PAGE */
-  .skills-page_title_bg-title {
+  /* GENERAL */
+  .general_title_bg-title {
     font-size: 9rem;
   }
 
-  .skills-page_title_main-title {
+  .general_title_main-title {
     font-size: 5rem;
   }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1536px) {
   /* HOME PAGE */
   .home-page_profile-image {
     height: 60%;
@@ -227,6 +300,45 @@ p {
   .skills-page_grid {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+  }
+
+  /* EDUCATION PAGE */
+  .education-page_oficial-education_each-education_content {
+    /* border: 2px yellow solid; */
+    margin-left: 15%;
+  }
+
+  .education-page_oficial-education_each-education_decoration_circle {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* HOME PAGE */
+  .home-page_profile-image {
+    height: 50%;
+  }
+
+  .home-page_content {
+    width: 55%;
+  }
+
+  /* SKILLS PAGE */
+  .skills-page_grid_each-skill_images_percentage {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* EDUCATION PAGE */
+  .education-page_oficial-education_each-education_decoration_circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .education-page_oficial-education_each-education_decoration_line {
+    width: 4px;
+    height: 90%;
   }
 }
 
@@ -273,10 +385,10 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .skills-page_grid_each-skill_images_percentage {
+  /* .skills-page_grid_each-skill_images_percentage {
     width: 100px;
     height: 100px;
-  }
+  } */
 
   .skills-page_grid_each-skill_images_percentage p {
     font-size: 1.8rem;
@@ -285,12 +397,30 @@ p {
   .skills-page_grid_each-skill_content_text {
     text-align: center;
   }
+
+  /* EDUCATION PAGE */
+  .education-page_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .education-page_oficial-education_each-education_decoration_circle {
+    width: 40px;
+    height: 40px;
+  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   /* GENERAL */
   .complete-content {
     width: 90%;
+  }
+
+  .general_title_bg-title {
+    font-size: 4rem;
+  }
+
+  .general_title_main-title {
+    font-size: 2rem;
   }
 
   /* HOME PAGE */
@@ -322,6 +452,12 @@ p {
   .skills-page_grid_each-skill_images_percentage p {
     font-size: 1.6rem;
   }
+
+  /* EDUCATION PAGE */
+  .education-page_oficial-education_each-education_decoration_circle {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -350,13 +486,6 @@ p {
   }
 
   /* SKILLS PAGE */
-  .skills-page_title_bg-title {
-    font-size: 4rem;
-  }
-
-  .skills-page_title_main-title {
-    font-size: 2rem;
-  }
 
   .skills-page_grid_each-skill {
     margin: 40px;
