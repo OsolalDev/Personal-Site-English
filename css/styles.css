@@ -198,8 +198,48 @@ p {
   font-weight: 400;
 }
 
-.skills-page_grid_each-skill_content_text {
-  text-align: justify;
+.skills-page_middle-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 70px 0;
+}
+
+.skills-page_college-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 20px;
+  margin-bottom: 150px;
+}
+
+.skills-page_college-grid_each-skill_images_icon {
+  width: 100%;
+}
+
+.skills-page_college-grid_each-skill_content {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.skills-page_college-grid_each-skill_content_skill-title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.skills-page_college-grid_each-skill_content_basic {
+  color: lightsalmon;
+  margin: 0;
+}
+
+.skills-page_college-grid_each-skill_content_medium {
+  color: lightblue;
+  margin: 0;
+}
+
+.skills-page_college-grid_each-skill_content_advanced {
+  color: lightgreen;
+  margin: 0;
 }
 
 /* ------------------------------------------------ EDUCATION PAGE STYLE ------------------------------------------------ */
@@ -505,10 +545,6 @@ p {
 
   .skills-page_grid_each-skill_images_percentage p {
     font-size: 1.8rem;
-  }
-
-  .skills-page_grid_each-skill_content_text {
-    text-align: center;
   }
 
   /* EDUCATION PAGE */
