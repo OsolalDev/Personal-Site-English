@@ -68,6 +68,10 @@ p {
   margin-top: 50px;
 }
 
+footer p {
+  text-align: center;
+}
+
 /* ------------------------------------------------ HOME PAGE STYLE ------------------------------------------------ */
 
 .home-page {
@@ -411,6 +415,10 @@ p {
     gap: 30px;
   }
 
+  .skills-page_college-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   /* EDUCATION PAGE */
   .education-page_oficial-education_each-education_content {
     /* border: 2px yellow solid; */
@@ -451,6 +459,13 @@ p {
   }
 }
 
+@media (max-width: 1250px) {
+  /* SKILLS PAGE */
+  .skills-page_college-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   /* HOME PAGE */
   .home-page_profile-image {
@@ -462,9 +477,17 @@ p {
   }
 
   /* SKILLS PAGE */
+  .skills-page_grid {
+    grid-template-columns: 1fr;
+  }
+
   .skills-page_grid_each-skill_images_percentage {
     width: 90px;
     height: 90px;
+  }
+
+  .skills-page_college-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* EDUCATION PAGE */
@@ -614,6 +637,15 @@ p {
     font-size: 1.6rem;
   }
 
+  .skills-page_college-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .skills-page_college-grid_each-skill {
+    margin: 0 100px;
+  }
+
   /* EDUCATION PAGE */
   .education-page_oficial-education_each-education_decoration_circle {
     width: 30px;
@@ -662,5 +694,9 @@ p {
 
   .skills-page_grid_each-skill_images_percentage p {
     font-size: 1.2rem;
+  }
+
+  .skills-page_college-grid_each-skill {
+    margin: 0 50px;
   }
 }
